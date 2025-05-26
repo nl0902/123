@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>一纸明士 · 文创产品</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Serif SC', serif;
+      background: #0d0d0d;
+      color: #fff;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.imgur.com/ylYkBKH.jpg') repeat; /* 宣纸纹理背景 */
+      background-size: cover;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 3em 1em 1em;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.3em;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.1em;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    nav a {
+      margin: 0 1.2em;
+      color: #aaa;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1em;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2em;
+      padding: 3em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 20px rgba(255,255,255,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .info {
+      padding: 1.2em;
+      text-align: center;
+    }
+
+    .info h3 {
+      font-size: 1.2em;
+      margin-bottom: 0.6em;
+    }
+
+    .info p {
+      color: #bbb;
+      margin-bottom: 1em;
+      font-size: 0.95em;
+    }
+
+    .btn-add {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 0.6em 1.5em;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-size: 0.95em;
+    }
+
+    .btn-add:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .gallery {
+        padding: 2em 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 粒子背景 -->
+  <div id="particles-js"></div>
+
+  <!-- 头部 -->
+  <header>
+    <h1>一纸明士</h1>
+    <p>文人书香 · 抄经雅器 · 明士共创</p>
+  </header>
+
+  <!-- 导航 -->
+  <nav>
+    <a href="#">全部</a>
+    <a href="#">香具</a>
+    <a href="#">日历</a>
+    <a href="#">香炉</a>
+  </nav>
+
+  <!-- 产品展示区 -->
+  <section class="gallery">
+    <!-- 示例产品1 -->
+    <div class="card">
+      <a href="detail.html?id=1">
+        <img src="https://gd-hbimg.huaban.com/023a0680c457913fb5d669e92b3a4f86324945791b7b0-3r2wtD_fw1200" alt="抄经纸">
+      </a>
+      <div class="info">
+        <h3>宣纸抄经套装</h3>
+        <p>天然手工 | 限量预售</p>
+        <button class="btn-add" onclick="addToCart('宣纸抄经套装')">加入购物车</button>
+      </div>
+    </div>
+    <!-- 示例产品2 -->
+    <div class="card">
+      <a href="detail.html?id=2">
+        <img src="https://gd-hbimg.huaban.com/2cc6dd5e130d88ba047e621d1a65e021eb538a611109b-nyjzbj_fw1200" alt="墨香香具">
+      </a>
+      <div class="info">
+        <h3>手工香具 · 墨影</h3>
+        <p>静书沉香 | 香道雅器</p>
+        <button class="btn-add" onclick="addToCart('墨影香具')">加入购物车</button>
+      </div>
+    </div>
+    <!-- 示例产品3 -->
+    <div class="card">
+      <a href="detail.html?id=3">
+        <img src="https://gd-hbimg.huaban.com/2c8c1d415ed414489c777431a3da4e28e486ae95154b9-Ag3S7P_fw1200" alt="墨香日历">
+      </a>
+      <div class="info">
+        <h3>墨香日历</h3>
+        <p>定制书法 · 优雅古风</p>
+        <button class="btn-add" onclick="addToCart('墨香卷轴')">加入购物车</button>
+      </div>
+    </div>
+    <!-- 示例产品4 -->
+    <div class="card">
+      <a href="detail.html?id=4">
+        <img src="https://gd-hbimg.huaban.com/b13e563f25d5e827b0794a99cd48b7537c65e74118e85-wz6Iq7_fw1200" alt="金镶香炉">
+      </a>
+      <div class="info">
+        <h3>金镶香炉</h3>
+        <p>精美工艺 · 香道用品</p>
+        <button class="btn-add" onclick="addToCart('金镶香炉')">加入购物车</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 粒子背景脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.2, "random": true },
+        "size": { "value": 2, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.1,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 0.4,
+          "direction": "none",
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": false }
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 }
+        }
+      },
+      "retina_detect": true
+    });
+
+    function addToCart(name) {
+      alert(`「${name}」已加入购物清单。`);
+    }
+  </script>
+</body>
+</html>
